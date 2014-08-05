@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"	
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    
+	<ListView android:id="@+id/displayed_messages"
+    	android:layout_height="0dp"
+    	android:layout_width="match_parent" 	
+		android:layout_weight="1"
+		android:background="#16195D" 
+		android:paddingRight="15dp"
+		android:paddingLeft="15dp" />
+	
+	<View
+	    android:layout_height="10dp" 
+	    android:layout_width="match_parent"
+	    android:background="@drawable/div_gradient" />
+	<!--  
+	<EditText android:id="@+id/phone_number"
+			android:padding="16dp"
+			android:layout_width=""
+			android:layout_height="wrap_content"
+			android:hint="@string/phone_number" />    
+	-->
+	
+	<LinearLayout android:id="@+id/texting_area"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:paddingLeft="16dp"
+		android:paddingTop="5dp"
+		android:paddingRight="16dp"
+		android:gravity="bottom" 
+		android:baselineAligned="false" >
+	
+		<EditText android:id="@+id/text_box"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight=".8"
+			android:hint="@string/edit_message" />
+		
+		<Button android:id="@+id/send_button"
+			android:text="@string/button_send"
+			android:layout_width="0dp"
+			android:layout_weight=".2"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom"
+			android:onClick="sendMessage" />
+
+	</LinearLayout>
+</LinearLayout>
+
+	
+
+
