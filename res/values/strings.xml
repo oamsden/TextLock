@@ -3,9 +3,15 @@
 
     <string name="app_name">TextLock App</string>
     <string name="action_settings">Settings</string>
-	<string name="edit_message">Enter a message</string>
-	<string name="button_send">Send</string>
-	<string name= "phone_number">Enter a phone number</string>
-	<string name="title_activity_main">MainActivity</string>    
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="button_contacts">Contacts</string>
+    <string name="button_conversations">Conversations</string>
+    <string name="phone_number">Enter a phone number</string>
+    <string name="title_activity_contact">ContactActivity</string>
+    <string name="title_activity_convo">ConversationActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_conversation">ConversationActivity</string>
 
 </resources>
