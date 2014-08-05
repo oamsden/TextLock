@@ -19,10 +19,10 @@ public class SmsReceiver extends BroadcastReceiver
 	// status, type, reply_path_present, 
 	// subject, body, service_center, 
 	// locked, error_code, seen]
-	
+
 	public static final String SMS_EXTRA_NAME = "pdus";
 	public static final String SMS_URI = "content://sms";
-	
+
 	public static final String ADDRESS = "address";
     public static final String PERSON = "person";
     public static final String DATE = "date";
@@ -40,7 +40,7 @@ public class SmsReceiver extends BroadcastReceiver
     
     public static final int MESSAGE_IS_NOT_SEEN = 0;
     public static final int MESSAGE_IS_SEEN = 1;
-	
+
     // Change the password here or give a user possibility to change it
     public static final byte[] PASSWORD = new byte[]{ 0x20, 0x32, 0x34, 0x47, (byte) 0x84, 0x33, 0x58 };
     
@@ -64,7 +64,7 @@ public class SmsReceiver extends BroadcastReceiver
             	SmsMessage sms = SmsMessage.createFromPdu((byte[])smsExtra[i]);
             	
             	String body = sms.getMessageBody().toString();
-            	//String address = sms.getOriginatingAddress();
+            	String address = sms.getOriginatingAddress();
                 
                 messages = body;
                 
@@ -75,11 +75,13 @@ public class SmsReceiver extends BroadcastReceiver
             }
             
             // Display SMS message
+            
             ArrayList<String> templist = new ArrayList<String>();
             templist.add("1");
-            templist.add("Received:     " + messages);
-            MainActivity.messages_to_show.add(templist);
-            MainActivity.Adpt.addMessage(templist);
+            templist.add("Received: " + messages);
+            ConversationActivity.messages_to_show.add(templist);
+            ConversationActivity.Adpt.addMessage(templist);
+      
         }
         
         // WARNING!!! 
@@ -87,7 +89,7 @@ public class SmsReceiver extends BroadcastReceiver
         // Be careful!
         // this.abortBroadcast(); 
 	}
-	
+
 	private void putSmsToDatabase( ContentResolver contentResolver, SmsMessage sms )
 	{
 		// Create SMS row
